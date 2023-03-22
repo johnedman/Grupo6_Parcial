@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+//JOHN MANTILLA, MARIO MESA, JHAN lEON
+
 import java.util.ArrayList;
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
