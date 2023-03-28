@@ -18,32 +18,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle(getString(R.string.listado));
+        setTitle("Lista de Partidos");
         cargarDatos();
 
         rvListaPartidos = findViewById(R.id.rv_lista_partidos);
 
         Adaptador miAdaptador = new Adaptador(ListaPartidos);
 
-        miAdaptador.setOnItemClickListener(new Adaptador().OnItemClickListener() ){
+        miAdaptador.setOnItemClickListener(new Adaptador.OnItemClickListener() {
             @Override
-            public void onItemClick (Partidos miPartido,int posicion){
+            public void onItemClick(Partidos miPartido, int posicion) {
 
-                Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
+                Intent intent = new Intent(MainActivity.this, Detalle.class);
                 intent.putExtra("producto", miPartido);
                 startActivity(intent);
 
             }
-        }
-
+        });
 
 
         rvListaPartidos.setAdapter(miAdaptador);
         rvListaPartidos.setLayoutManager(new LinearLayoutManager(this));
+    }
 
     public void cargarDatos(){
         Partidos partido1 = new Partidos();
-        partido1.setNombre_Rival("Uruguay");
+        partido1.setNombre("Uruguay");
         partido1.setTitular("Paolo Montero, Álvaro Recoba, Pablo Bengoechea, Roque Maspoli, Obdulio Varela");
         partido1.setGoles(0.00);
         partido1.setGoles_Rival(0.00);
@@ -51,28 +51,28 @@ public class MainActivity extends AppCompatActivity {
 
 
         Partidos partido2 = new Partidos();
-        partido2.setNombre_Rival("Argentina");
+        partido2.setNombre("Argentina");
         partido2.setTitular("Emiliano Martínez,Gerónimo Rulli, Franco Armani, Cristian Romero,Lisandro Martínez");
         partido2.setGoles(1.00);
         partido2.setGoles_Rival(1.00);
         partido2.setUrl_Escudo("http://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1879.png");
 
         Partidos partido3 = new Partidos();
-        partido3.setNombre_Rival("Peru");
+        partido3.setNombre("Peru");
         partido3.setTitular("Pedro Gallese,Carlos Cáceda,José Carvallo, Luis Abram,Anderson Santamaría");
         partido3.setGoles(3.00);
         partido3.setGoles_Rival(2.00);
         partido3.setUrl_Escudo("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Logotipo_de_la_Federaci%C3%B3n_Peruana_de_F%C3%BAtbol.svg/1200px-Logotipo_de_la_Federaci%C3%B3n_Peruana_de_F%C3%BAtbol.svg.png");
 
         Partidos partido4 = new Partidos();
-        partido4.setNombre_Rival("Brasil");
+        partido4.setNombre("Brasil");
         partido4.setTitular("Ederson,Weverton,Mycael,Éder Militão,Bremer");
         partido4.setGoles(1.00);
         partido4.setGoles_Rival(2.00);
         partido4.setUrl_Escudo("http://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1881.png");
 
         Partidos partido5 = new Partidos();
-        partido5.setNombre_Rival("Venezuela");
+        partido5.setNombre("Venezuela");
         partido5.setTitular("Joel Graterol,Alain Baroja,Cristopher Varela,Yordan Osorio,Christian Makoun");
         partido5.setGoles(0.00);
         partido5.setGoles_Rival(0.00);

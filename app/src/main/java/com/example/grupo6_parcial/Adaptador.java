@@ -9,9 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
 
-//JOHN MANTILLA, MARIO MESA, JHAN lEON
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -40,7 +39,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     @Override
     public Adaptador.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View miView = LayoutInflater.from(parent.getContext()).inflate(R.layout.Partidos_Lista,parent,false);
+        View miView = LayoutInflater.from(parent.getContext()).inflate(R.layout.partidos_lista,parent,false);
         return new ViewHolder(miView);
     }
 
@@ -77,7 +76,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
             tvTitular.setText(miPartido.getTitular());
             tvGoles.setText(miPartido.getGoles().toString());
             tvGoles_Rival.setText(miPartido.getGoles_Rival().toString());
-            Picasso.get().load(miProducto.getUrlImagen()).error(R.drawable.ic_launcher_background).into(ivProducto);
+            Picasso.get().load(miPartido.getUrl_Escudo()).error(R.drawable.ic_launcher_background).into(ivEscudo);
+
 
 
 
@@ -87,6 +87,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 
         }
 
+    }
+    public interface OnItemClickListener{
+        void onItemClick(Partidos miPartido, int posicion);
     }
 
 }

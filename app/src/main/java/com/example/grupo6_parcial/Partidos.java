@@ -10,9 +10,7 @@ public class Partidos implements Serializable {
     private Double goles_rival;
     private String url_escudo_rival;
 
-    public Partidos(){
 
-    }
 
     public Partidos(String Nombre_Rival, String Titular, Double Goles, Double Goles_Rival, String Url_Escudo) {
         this.nombre_rival = Nombre_Rival;
@@ -20,6 +18,10 @@ public class Partidos implements Serializable {
         this.goles = Goles;
         this.goles_rival = Goles_Rival;
         this.url_escudo_rival = Url_Escudo;
+    }
+
+    public Partidos() {
+
     }
 
     public String getNombre_Rival() {
